@@ -1,0 +1,9 @@
+@import "tailwindcss";
+@import "daisyui/daisyui.css";
+:root {
+    --primary: #2B6CB0;
+    --secondary: #D69E2E;
+    --base-100: #FFFFFF;
+    --base-200: #F7FAFC;
+    --base-content: #2D3748;
+}

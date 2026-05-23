@@ -1,0 +1,74 @@
+[
+  {
+    "serviceId": 1,
+    "serviceName": "Winter Coat Fitting for Dogs",
+    "providerName": "PawCare Studio",
+    "providerEmail": "info@pawcare.com",
+    "price": 25,
+    "rating": 4.9,
+    "slotsAvailable": 4,
+    "description": "Custom coat fitting and warm outfit options to keep your dog comfortable in the cold weather.",
+    "image": "https://i.ibb.co.com/hF75cLH5/dogwinter.webp",
+    "category": "Clothing"
+  },
+  {
+    "serviceId": 2,
+    "serviceName": "Winter Grooming & Paw Treatment",
+    "providerName": "CozyPets Grooming",
+    "providerEmail": "hello@cozypets.com",
+    "price": 30,
+    "rating": 4.8,
+    "slotsAvailable": 3,
+    "description": "Full grooming session with moisturizing paw balm and winter-safe shampoo to protect skin dryness.",
+    "image": "https://i.ibb.co.com/LDMm143W/winter-pet-grooming-tips-dos-and-donts-guide.jpg",
+    "category": "Grooming"
+  },
+  {
+    "serviceId": 3,
+    "serviceName": "Heated Pet Bed Installation",
+    "providerName": "WarmPaws Care Center",
+    "providerEmail": "support@warmpaws.com",
+    "price": 45,
+    "rating": 4.7,
+    "slotsAvailable": 5,
+    "description": "Setup of electric heated beds to keep pets warm and comfortable during freezing nights.",
+    "image": "https://i.ibb.co.com/pBvyWk94/are-heated-cat-beds-safe-to-leave-plugged-in-600x600.webp",
+    "category": "Comfort"
+  },
+  {
+    "serviceId": 4,
+    "serviceName": "Winter Nutrition Plan for Pets",
+    "providerName": "HealthyTail Clinic",
+    "providerEmail": "diet@healthytail.com",
+    "price": 20,
+    "rating": 4.6,
+    "slotsAvailable": 6,
+    "description": "Custom diet planning to boost immunity and energy during cold weather.",
+    "image": "https://i.ibb.co.com/V8zW4s4/Winter-Pet-Nutrition-Guide.jpg",
+    "category": "Health"
+  },
+  {
+    "serviceId": 5,
+    "serviceName": "Anti-Cold Vaccination Package",
+    "providerName": "PetShield Veterinary",
+    "providerEmail": "contact@petshield.com",
+    "price": 60,
+    "rating": 4.9,
+    "slotsAvailable": 2,
+    "description": "Winter vaccination package to protect pets from seasonal diseases and infections.",
+    "image": "https://i.ibb.co.com/ycnXjBd5/cat-vet-care.jpg",
+    "category": "Medical"
+  },
+  {
+    "serviceId": 6,
+    "serviceName": "Indoor Training & Activity Session",
+    "providerName": "HappyPaws Academy",
+    "providerEmail": "train@happypaws.com",
+    "price": 35,
+    "rating": 4.7,
+    "slotsAvailable": 4,
+    "description": "Indoor training and play sessions to keep pets active during cold winter days.",
+    "image": "https://i.ibb.co.com/sJwstZ72/Chat-GPT-Image-May-23-2026-07-29-11-PM.png",
+    "category": "Training"
+  }
+]
