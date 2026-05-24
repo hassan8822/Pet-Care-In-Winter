@@ -5,6 +5,9 @@ import MyProfile from "../Pages/MyProfile";
 import MainLayout from "../Layouts/MainLayout";
 import ErrorPage from "../Pages/ErrorPage";
 import ServiceDetails from "../Pages/ServiceDetails";
+import Login from "../Pages/Login";
+import SignUp from "../Pages/SignUp";
+import AuthenticationLayout from "../Layouts/AuthenticationLayout";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -34,6 +37,20 @@ export const router = createBrowserRouter([
       }
     ]
     
+  },
+  {
+   path:"/auth",
+   element: <AuthenticationLayout></AuthenticationLayout>,
+   children:[
+    {
+      path:"/auth/login",
+      element:<Login></Login>
+    },
+    {
+      path:"/auth/signup",
+      element:<SignUp></SignUp>
+    }
+   ]
   },
   {
     path:"*",

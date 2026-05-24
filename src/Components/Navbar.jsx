@@ -1,8 +1,21 @@
 import { Link, NavLink } from "react-router"
 import petlogo from "../assets/petLogo.png"
-
+import { AuthContext } from "../Provider/AuthProvider";
+import { useContext } from "react";
 
 const Navbar = () => {
+  const { user, signOutUser } = useContext(AuthContext);
+  const handleLogout = () => {
+    console.log( "user try")
+    signOutUser()
+    .then(() => {
+      alert("you logged out succesfully")
+    })
+    .catch((error) => {
+      console.log(error)
+
+    })
+  }
    const links = <>  
  <NavLink to="/" className={({isActive}) => isActive
             ? "text-[#632EE3] font-bold"
@@ -40,10 +53,26 @@ const Navbar = () => {
       }
     </ul>
   </div>
+
   <div className="navbar-end">
-    <a className="btn">Login</a>
+    {user ? (
+      <>
+        <div className="tooltip tooltip-bottom"
+          data-tip = {user ?. displayName || "user"}>
+         
+
+          <img src={user ?.photoURL ||  "https://i.ibb.co/4pDNDk1/avatar.png" } alt="" />
+        </div>
+
+        <button onClick={handleLogout} className="btn btn-primary px-10">Logout</button>
+      </>
+    ) : (
+      <Link to="/auth/login" className="btn btn-primary px-10">Login</Link>
+    )}
   </div>
-</div>
+   
+  </div>
+
     );
 };
 
