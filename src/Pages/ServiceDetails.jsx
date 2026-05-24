@@ -1,4 +1,5 @@
 import { Link, useLoaderData, useParams } from "react-router";
+import { toast } from "react-toastify";
 
 
 const ServiceDetails = () => {
@@ -6,6 +7,21 @@ const ServiceDetails = () => {
     const {id} = useParams();
 
     const singleService = data.find(service => service.serviceId == id)
+
+      if (!singleService) {
+    return (
+      <div className="text-center py-20">
+        <h2 className="text-3xl font-bold">
+          Service Not Found
+        </h2>
+      </div>
+    );
+  }
+    const handleBooking = (e) => {
+      e.preventDefault();
+      toast.success("service book sucessfully");
+      e.target.reset();
+    }
     return (
         <div className="max-w-5xl mx-auto py-10 px-4">
             <img className="w-full h-100 object-cover rounded-2xl" 
@@ -26,7 +42,7 @@ const ServiceDetails = () => {
           Book This Service
         </h2>
 
-        <form className="space-y-4">
+        <form onSubmit={handleBooking} className="space-y-4">
  <fieldset className="fieldset">
           <label className="label">Name</label>
           <input type="name" 
@@ -42,15 +58,10 @@ const ServiceDetails = () => {
       
            <Link to="/">
         
-          <button className="btn btn-primary ">
+          <button type="submit" className="btn btn-primary ">
             Book Now
           </button>
-          <div className="flex justify-end">
-             <button className="btn bg-orange-500 hover:bg-orange-600 text-white border-none mt-4">
-           Go Back
-           </button>
-
-          </div>
+         
            
 
         </Link>
