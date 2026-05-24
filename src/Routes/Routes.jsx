@@ -9,6 +9,7 @@ import Login from "../Pages/Login";
 import SignUp from "../Pages/SignUp";
 import AuthenticationLayout from "../Layouts/AuthenticationLayout";
 import PrivateRoute from "../Provider/PrivateRoute/PrivateRoute";
+import UpdateProfile from "../Pages/UpdateProfile";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -28,7 +29,16 @@ export const router = createBrowserRouter([
       },
       {
         path:"/myprofile",
-        element: <MyProfile></MyProfile>
+        element: <PrivateRoute>
+          <MyProfile></MyProfile>
+        </PrivateRoute>
+      },
+
+      {
+        path:"/updateprofile",
+        element:<PrivateRoute>
+          <UpdateProfile></UpdateProfile>
+        </PrivateRoute>
       },
       {
         path:"/pet/:id",
