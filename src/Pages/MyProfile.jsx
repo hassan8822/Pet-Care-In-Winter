@@ -8,7 +8,7 @@ const MyProfile = () => {
     const navigate = useNavigate()
     return (
         <div className="flex justify-center items-center min-h-screen">
-            <div className="card bg-base-100 shadow-xl p-6 w-96 text-center">
+            <div className="card bg-base-100 shadow-xl p-6 w-96 text-center animate__animated animate__zoomIn ">
                 <img className="w-24 h-24 rounded-full mx-auto" src={user ?.photoURL || userImage } alt="" />
                  <h2 className="text-xl font-bold mt-3">{user ?. displayName || "No Name"}</h2>
                       <p className="text-gray-500">{user?.email}</p>

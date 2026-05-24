@@ -53,11 +53,11 @@ const SignUp = () => {
         })
     }
      const handlePassword = (e) => {
-        e.preventDefault;
+        e.preventDefault();
         setShowpassword(!showpassword)
      }
     return (
-       <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+       <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl animate__animated animate__backInRight">
       <div className="card-body">
         <h1 className="text-3xl font-bold">Register Your Account!</h1>
 
@@ -70,7 +70,7 @@ const SignUp = () => {
           required />
           {/* photoUrl */}
           <label className="label">Photo</label>
-          <input type="Photo" name="photo" className="input" placeholder="PhotoURL"
+          <input type="text" name="photo" className="input" placeholder="PhotoURL"
           required />
           {/* email */}
           <label className="label">Email</label>
