@@ -1,25 +1,32 @@
 
-import { Link } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../Provider/AuthProvider";
-import { use } from "react";
+import { use, useState } from "react";
 
 
 const Login = () => {
-  const  signIn = use(AuthContext);
+  const [error, setError] = useState("")
+  const  {signIn} = use(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate();
+  console.log(location)
     const handleLogin = (e) => {
         e.preventDefault();
         const email = e.target.email.value;
         const password = e.target.password.value;
         console.log(email,password);
+
         signIn(email, password)
         .then((result) => {
           const user =result.user;
           console.log(user)
+          navigate(`${location.state? location.state : "/"}`)
         })
         .catch((error) => {
            const errorCode = error.code;
-    const errorMessage = error.message;
-    alert(errorCode, errorMessage)
+    // const errorMessage = error.message;
+    // alert(errorCode, errorMessage)
+    setError(errorCode)
   });
         
         
@@ -39,7 +46,11 @@ const Login = () => {
 
           <label className="label">Password</label>
           <input type="password" name="password" className="input" placeholder="Password"
+          autoComplete="current-password"
           required />
+          {
+            error && <p className="text-red-500">{error}</p>
+          }
 
           <div><a className="link link-hover">Forgot password?</a></div>
           <button type="submit" className="btn btn-neutral mt-4">Login</button>

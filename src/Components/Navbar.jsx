@@ -2,6 +2,7 @@ import { Link, NavLink } from "react-router"
 import petlogo from "../assets/petLogo.png"
 import { AuthContext } from "../Provider/AuthProvider";
 import { useContext } from "react";
+import userImage from "../assets/icons8-user-50.png"
 
 const Navbar = () => {
   const { user, signOutUser } = useContext(AuthContext);
@@ -61,13 +62,22 @@ const Navbar = () => {
           data-tip = {user ?. displayName || "user"}>
          
 
-          <img src={user ?.photoURL ||  "https://i.ibb.co/4pDNDk1/avatar.png" } alt="" />
+          <img className="w-10 h-10 rounded-full object-cover border"
+           src={`${user ? user.photoURL : userImage}`} alt="" />
         </div>
 
         <button onClick={handleLogout} className="btn btn-primary px-10">Logout</button>
       </>
     ) : (
-      <Link to="/auth/login" className="btn btn-primary px-10">Login</Link>
+       <div className="flex gap-2">
+    <Link to="/auth/login" className="btn btn-primary">
+      Login
+    </Link>
+
+    <Link to="/auth/signup" className="btn btn-outline btn-primary">
+      Register
+    </Link>
+  </div>
     )}
   </div>
    

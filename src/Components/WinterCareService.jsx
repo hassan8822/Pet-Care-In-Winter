@@ -44,7 +44,7 @@ const WinterCareService = () => {
                       ${singleData.price}
                     </div>
                     <Link
-                      to={`/service/${singleData.serviceId}`}
+                      to={`/pet/${singleData.serviceId}`}
                       className="btn btn-primary btn-sm rounded-md font-bold text-white tracking-wide"
                     >
                       View Details

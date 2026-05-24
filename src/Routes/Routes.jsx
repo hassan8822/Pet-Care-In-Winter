@@ -8,6 +8,7 @@ import ServiceDetails from "../Pages/ServiceDetails";
 import Login from "../Pages/Login";
 import SignUp from "../Pages/SignUp";
 import AuthenticationLayout from "../Layouts/AuthenticationLayout";
+import PrivateRoute from "../Provider/PrivateRoute/PrivateRoute";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -31,7 +32,9 @@ export const router = createBrowserRouter([
       },
       {
         path:"/pet/:id",
-        element:<ServiceDetails></ServiceDetails>,
+        element:<PrivateRoute>
+          <ServiceDetails></ServiceDetails>
+        </PrivateRoute>,
         loader: () => fetch("/pet.json")
 
       }
